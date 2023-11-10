@@ -103,6 +103,7 @@ fun processImage(context: Context, uri: Uri) : Bitmap {
     if (points.size == 4) {
       // Draw the square
       Imgproc.drawContours(dst, listOf(MatOfPoint(*points.toTypedArray())), -1, Scalar(0.0, 255.0, 0.0), 3)
+      Imgproc.cvtColor(dst, dst, Imgproc.COLOR_RGB2BGR)
       break
     }
   }
